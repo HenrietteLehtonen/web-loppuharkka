@@ -1,0 +1,111 @@
+.dialog-login, #dialog-info {
+  margin: auto;
+  height: 550px;
+  width: 400px;
+  background-color: var(--light);
+  border: none;
+  box-shadow: 10px 10px var(--dark);
+  z-index: 2;
+  margin-top: 100px;
+}
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+dialog h1 {
+  width: 100%;
+  padding-top: 1rem;
+  height: 50px;
+  text-align: center;
+  background-color: var(--orange);
+  color: white;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input:required {
+  transition: border-color ease-in 0.5s;
+}
+
+form input:valid {
+  border-color: var(--blue);
+}
+form input:invalid {
+  border-color: var(--yellow);
+}
+input {
+  height: 3em;
+  border: 2px solid var(--yellow);
+  text-align: center;
+}
+input:focus {
+  outline: none;
+}
+
+fieldset {
+  margin-top: 40px;
+  /* padding -> tila borderin sisälle ! huom border = none  */
+  padding: 20px;
+  width: 15em;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+legend {
+  font-size: 1.5em;
+  text-align: center;
+  color: var(--dark);
+}
+
+label {
+  margin: 10px 0;
+}
+
+/*
+  form button {
+    width: 10em;
+    height: 3em;
+    margin: 5px;
+    border: none;
+    color: white;
+  } */
+
+#sign-btn,
+#close-btn,
+#info-btn-close {
+  background-color: var(--red);
+  color: #fff;
+  width: 10em;
+  height: 3em;
+  margin: 5px;
+  border: none;
+  transition: ease-out 0.8s;
+}
+#close-btn {
+  background-color: var(--brown);
+  box-shadow: inset 0 0 0 0 var(--dark);
+}
+#close-btn:hover {
+  box-shadow: inset 400px 0 0 0 var(--dark);
+}
+#sign-btn {
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 0 var(--yellow);
+}
+#sign-btn:hover {
+  box-shadow: inset 400px 0 0 0 var(--yellow);
+}
+/*  INFO DIALOG */
+#info-txt{
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+}
+#info-btn-close{
+  margin-top: 40px;
+}

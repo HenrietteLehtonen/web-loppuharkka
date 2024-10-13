@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script
+      src="https://kit.fontawesome.com/2a4b915664.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Skule Safkat</title>
+    <script type="module" crossorigin src="./assets/index-C9z7C0W1.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CxAfHSw9.css">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+
+  <body>
+    <!--
+
+    **********************
+
+          NAV
+
+    **********************
+
+    -->
+    <nav>
+      <div class="toggle">
+        <input type="checkbox" class="checkbox" id="checkbox" />
+        <label for="checkbox" class="checkbox-label">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <span class="ball"></span>
+        </label>
+      </div>
+      <div class="top-menu">
+        <button id="info-btn">INFO</button>
+        <img src="./assets/logo-uHvlS2LQ.png" alt="" id="logo" />
+        <button id="login-btn">
+          <i class="fa-solid fa-right-to-bracket kirjaudu"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!--
+    **********************
+
+          DIALOGS
+
+    **********************
+    -->
+    <dialog id="dialog-info">
+      <div class="dialog-container">
+        <h1>Info</h1>
+        <p id="info-txt">
+          Tämä sivusto toteutettu web-kehityksen perusteet kurssin
+          lopputyönä.<br />
+          <br />
+          Sivulla näytetään kouluravintolat ja listataan ne lähimpänä sinua.
+          <br />
+          <br />
+          Sivustolta näkee ravintolakohtaisesti päivän tai koko viikon
+          ruokalistan ja allergeenit ja hinnat.
+          <br />
+          <br />
+          Menun avattuasi saat sen kiinni klikkaamalla uudelleen.
+        </p>
+        <button id="info-btn-close">OK</button>
+      </div>
+    </dialog>
+
+    <dialog class="dialog-login">
+      <div class="dialog-container">
+        <h1>Rekisteröidy</h1>
+        <form method="dialog">
+          <fieldset>
+            <legend>Kirjaudu</legend>
+            <label for="login-nimi"></label>
+            <input
+              type="text"
+              id="login-nimi"
+              name="nimi"
+              placeholder="Nimi"
+              minlength="3"
+              maxlength="15"
+              required
+            />
+
+            <label for="sposti-login"></label>
+            <input
+              type="email"
+              id="sposti-login"
+              name="sposti"
+              placeholder="Sähköposti@metropolia.fi"
+              required
+            />
+
+            <label for="login-ss"></label>
+            <input
+              type="password"
+              id="login-ss"
+              placeholder="Salasana"
+              required
+              pattern="^(?=.*[A-Z])(?=.*\d.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$"
+            /><br />
+          </fieldset>
+          <input id="sign-btn" type="submit" value="Kirjaudu" />
+          <button id="close-btn">Sulje</button>
+        </form>
+      </div>
+    </dialog>
+
+    <main>
+      <div id="table-container">
+        <div id="napit">
+          <button id="sodexo">Sodexo</button>
+          <button id="compass">Compass Group</button>
+          <button id="reset">Näytä kaikki</button>
+        </div>
+        <table id="restaurant-table">
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+          </tr>
+          <!-- add restaurants here -->
+        </table>
+        <!-- modal -->
+        <dialog id="dialog-menu">
+          <!-- add restaurant info here when restaurant is clicked -->
+        </dialog>
+      </div>
+    </main>
+    <div id="map"></div>
+    <footer>© Henski</footer>
+  </body>
+</html>

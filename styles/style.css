@@ -1,0 +1,372 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../public/BebasNeue-Regular.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier";
+}
+
+button {
+  border-radius: 4px;
+}
+nav,
+main,
+footer {
+  width: 80%;
+  margin: auto;
+}
+:root {
+  --blue: #68c7c1;
+  --paleblue: #81b4b3;
+  --yellow: #faca78;
+  --orange: #f57f5b;
+  --red: #dd5341;
+  --brown: #794a3a;
+  --light: #f8ebcf;
+  --dark: #354e5a;
+  --white: white;
+  --text-color: var(--dark);
+  --td-text-color: #3a3737;
+  --button-text-color: #3a3737;
+  --nav-btn-color: #ffffff;
+}
+:root.dark {
+  --blue: #2c5553;
+  --paleblue: #3b5453;
+  --yellow: #bc9551;
+  --orange: #934832;
+  --red: #6b271e;
+  --brown: #2d1b15;
+  --light: #645c4a;
+  --dark: #0e1519;
+  --white: rgb(123, 119, 119);
+  --text-color: #8d1d1d;
+  --td-text-color: #d4cccc;
+  --button-text-color: #bdb4b4;
+  --nav-btn-color: #d0d0d0;
+}
+
+body {
+  background-color: var(--light);
+  transition: background 0.2s linear;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+nav {
+  height: 100px;
+  background-color: var(--paleblue);
+  display: flex;
+  margin-top: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 5px var(--dark);
+}
+
+/* darkmode - toggle btn  */
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: var(--brown);
+  width: 40px;
+  /* height: 26px; */
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: var(--yellow);
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+.top-menu {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  position: relative;
+}
+ul {
+  list-style: none;
+}
+.toggle {
+  margin: auto;
+  position: relative;
+  left: 5px;
+}
+#logo {
+  height: 180px;
+  position: absolute;
+  top: -155%;
+  left: 42%;
+  transform: translateX(-50%);
+}
+
+#login-btn,
+#info-btn {
+  border: none;
+  width: 100px;
+  height: 40px;
+  background-color: var(--brown);
+  cursor: pointer;
+
+  color: var(--nav-btn-color);
+
+  border-radius: 5px;
+  transition: 0.2s ease-out;
+}
+#login-btn:hover,
+#info-btn:hover {
+  box-shadow: 5px 5px var(--dark);
+}
+
+.kirjaudu {
+  color: var(--nav-btn-color);
+  font-size: 20px;
+}
+
+#table-container {
+  margin-top: 50px;
+  background-color: var(--light);
+  height: 70vh;
+  width: 100%;
+  /* border: 10px solid var(--brown); */
+  overflow: auto;
+  border-radius: 5px;
+  box-shadow: 0px 10px var(--dark);
+}
+
+/*  RUOKALISTA   */
+
+#napit {
+  display: flex;
+  justify-content: center;
+  padding: 1em 0;
+  gap: 20px;
+  top: 0;
+  position: sticky;
+  background-color: var(--orange);
+}
+#napit button {
+  background-color: var(--red);
+  color: var(--nav-btn-color);
+  width: 10em;
+  height: 3em;
+  margin: 5px;
+  border: none;
+  transition: 0.2s ease-out;
+}
+#napit button:hover {
+  box-shadow: 5px 5px var(--dark);
+}
+#napit button:focus {
+  background-color: var(--blue);
+  box-shadow: 5px 5px var(--dark);
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: var(--white);
+  color: var(--td-text-color);
+  /**/
+}
+#restaurant-table table {
+  display: flex;
+  flex-direction: column;
+}
+
+th {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--brown);
+  font-weight: normal;
+  padding: 1em 1em;
+  text-align: left;
+}
+
+tr {
+  width: 100%;
+  border-bottom: 1px solid var(--brown);
+}
+#restaurant-table tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#restaurant-table td {
+  /* border-bottom: 1px solid var(--brown); */
+  padding: 0px 1em;
+  /**/
+  flex: 1;
+}
+#restaurant-table tr td:nth-child(-n + 3) {
+  min-width: 150px;
+}
+
+#button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.show-menu-btn {
+  background-color: var(--blue);
+  height: 40px;
+  width: 100px;
+  margin: 16px 12px;
+  border: none;
+  /* box-shadow: 4px 4px #354e5a */
+  transition: 0.2s ease-out;
+  color: var(--button-text-color);
+}
+.show-menu-btn:hover {
+  box-shadow: 4px 4px var(--dark);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--yellow);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+}
+
+.highlight {
+  font-weight: bold;
+  color: black;
+  /* background-color: rgb(194, 194, 235); */
+}
+
+footer {
+  height: 80px;
+  margin-top: 2em;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--paleblue);
+  border-radius: 5px;
+  box-shadow: 0px 5px var(--dark);
+  color: white;
+}
+
+@media only screen and (max-width: 1030px) {
+  #restaurant-table tr {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  #button-container {
+    justify-content: center;
+    gap: 12px;
+  }
+  #restaurant-table td:nth-child(-n + 3) {
+    margin-left: 12px;
+    padding: 16px 10px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  #logo {
+    height: 120px;
+    top: -40px;
+  }
+}
+@media only screen and (max-width: 740px) {
+  #logo {
+    height: 120px;
+    top: -40px;
+    left: 20%;
+  }
+}
+
+@media only screen and (max-width: 694px) {
+  #restaurant-table td:nth-child(1) {
+    order: 1;
+  }
+  #restaurant-table td:nth-child(2) {
+    order: 3;
+  }
+  #restaurant-table td:nth-child(3) {
+    order: 2;
+  }
+  #restaurant-table td:nth-child(4) {
+    order: 4;
+  }
+}
+@media only screen and (max-width: 550px) {
+  #logo {
+    height: 100px;
+    top: -30px;
+    left: 16%;
+  }
+  nav,
+  main,
+  footer {
+    width: 90%;
+    margin: 20px auto;
+  }
+  #table-container {
+    margin: 25px auto;
+  }
+}
+@media only screen and (max-width: 495px) {
+  #login-btn,
+  #info-btn {
+    width: 80px;
+  }
+  #login-btn {
+    margin-right: 12px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  nav,
+  main,
+  footer {
+    min-width: 360px;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  #restaurant-table td:nth-child(2) {
+    order: 2;
+  }
+}
